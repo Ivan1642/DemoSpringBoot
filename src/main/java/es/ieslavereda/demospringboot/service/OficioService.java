@@ -1,6 +1,7 @@
 package es.ieslavereda.demospringboot.service;
 
 import es.ieslavereda.demospringboot.model.Oficio;
+import es.ieslavereda.demospringboot.model.User;
 import es.ieslavereda.demospringboot.repository.OficioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,5 +26,12 @@ public class OficioService {
 
     public Object crearOficio(Oficio oficio) throws SQLException{
         return oficioRepository.insertarOficio(oficio);
+    }
+    public Oficio removeOficio(Integer id) throws SQLException {
+        return oficioRepository.deleteOficioById(id);
+    }
+
+    public Oficio updateOficio(Oficio oficio) throws SQLException {
+        return oficioRepository.updateOficio(oficio);
     }
 }
